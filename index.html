@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Jeu du Simon</title>
 </head>
 <body>
@@ -11,13 +12,14 @@
     <div id="app">
         <h2>Niveau : {{ level }}</h2>
         <div>
-            <span class="square"></span>
-            <span class="square"></span>
+            <span @click="playerChoice('blue')" :class="{blue: isBlue, black: isBlack}" class="square"></span>
+            <span @click="playerChoice('red')" :class="{red: isRed, black: isBlack}" class="square"></span>
         </div>
         <div>
-            <span class="square"></span>
-            <span class="square"></span>
+            <span @click="playerChoice('green')" :class="{green: isGreen, black: isBlack}" class="square"></span>
+            <span @click="playerChoice('yellow')" :class="{yellow: isYellow, black: isBlack}" class="square"></span>
         </div>
+        <button @click="start">start</button>
     </div>
     <script src="./node_modules/vue/dist/vue.js"></script>
     <script src="app.js"></script>
